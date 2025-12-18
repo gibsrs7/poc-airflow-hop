@@ -1,4 +1,6 @@
-# --- Python (Fundamental) ---
+# ===========================
+# 🐍 PYTHON & AIRFLOW
+# ===========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,36 +8,71 @@ __pycache__/
 venv/
 env/
 *.egg-info/
+.pytest_cache/
 
-# --- Airflow (Para não subir logs e banco local) ---
-logs/
+# Arquivos locais do Airflow (para não subirem se rodar local)
 airflow.db
 airflow.cfg
 unittests.cfg
 webserver_config.py
 standalone_admin_password.txt
+logs/
 
-# --- R (Arquivos temporários do R) ---
-.RData
-.Rhistory
+# ===========================
+# 📊 R & RSTUDIO
+# ===========================
 .Rproj.user
+.Rhistory
+.RData
+.Ruserdata
 *.Rproj
 
-# --- IDE e Sistema (Lixo do VS Code e Windows/Mac) ---
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# ===========================
+# 🐰 APACHE HOP
+# ===========================
+# Configurações locais que não devem subir
+hop-config.json
+jdbc.properties
+metastore.json
 
-# --- DADOS (Muito Importante!) ---
-# Evita subir CSVs pesados ou planilhas sem querer
+# Pastas de execução local/logs do Hop
+audit/
+tmp/
+output/
+
+# Arquivos de backup ou temporários do Hop
+*.prt
+*.ube
+*.hwf.backup
+*.hpl.backup
+
+# ===========================
+# 💿 DADOS & OUTPUTS
+# ===========================
+# Impede que planilhas e dados pesados subam para o Git
 data/
+datasets/
 outputs/
 *.csv
+*.xls
 *.xlsx
 *.parquet
+*.zip
+*.tar.gz
 
-# --- SEGURANÇA (O Mais Importante) ---
-# Jamais suba arquivos com senhas
+# ===========================
+# 💻 SISTEMA & IDE
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ===========================
+# 🔒 SEGURANÇA
+# ===========================
 .env
 k8s/secrets.yaml
+creds.json
+keys/
