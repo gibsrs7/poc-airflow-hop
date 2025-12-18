@@ -1,0 +1,41 @@
+# --- Python (Fundamental) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- Airflow (Para não subir logs e banco local) ---
+logs/
+airflow.db
+airflow.cfg
+unittests.cfg
+webserver_config.py
+standalone_admin_password.txt
+
+# --- R (Arquivos temporários do R) ---
+.RData
+.Rhistory
+.Rproj.user
+*.Rproj
+
+# --- IDE e Sistema (Lixo do VS Code e Windows/Mac) ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- DADOS (Muito Importante!) ---
+# Evita subir CSVs pesados ou planilhas sem querer
+data/
+outputs/
+*.csv
+*.xlsx
+*.parquet
+
+# --- SEGURANÇA (O Mais Importante) ---
+# Jamais suba arquivos com senhas
+.env
+k8s/secrets.yaml
