@@ -1,0 +1,31 @@
+{
+  "virtualPath": "",
+  "rdbms": {
+    "MSSQLNATIVE": {
+      "databaseName": "Estudos",
+      "instanceName": "",
+      "pluginId": "MSSQLNATIVE",
+      "usingDoubleDigit": false,
+      "usingIntegratedSecurity": false,
+      "accessType": 0,
+      "hostname": "localhost",
+      "password": "Encrypted 51cbf9fcad04cf93a2a40bba758fc0fc9b",
+      "pluginName": "MS SQL Server (Native)",
+      "port": "1433",
+      "attributes": {
+        "SUPPORTS_TIMESTAMP_DATA_TYPE": "Y",
+        "QUOTE_ALL_FIELDS": "N",
+        "SUPPORTS_BOOLEAN_DATA_TYPE": "Y",
+        "FORCE_IDENTIFIERS_TO_LOWERCASE": "N",
+        "PRESERVE_RESERVED_WORD_CASE": "Y",
+        "SQL_CONNECT": "",
+        "FORCE_IDENTIFIERS_TO_UPPERCASE": "N",
+        "PREFERRED_SCHEMA_NAME": "",
+        "EXTRA_OPTION_MSSQLNATIVE.encrypt": "false"
+      },
+      "manualUrl": "",
+      "username": "sa"
+    }
+  },
+  "name": "sqlserver_docker"
+}
