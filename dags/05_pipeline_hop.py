@@ -62,13 +62,8 @@ with DAG(
             "/bin/bash", 
             "-c", 
             """
-            echo "=== INICIO DO DEBUG: LISTANDO ARQUIVOS BAIXADOS ===" && \
-            find /dados_projeto -maxdepth 4 && \
-            echo "=== FIM DO DEBUG ===" && \
-            
-            echo "=== TENTANDO RODAR O HOP ===" && \
+            echo "=== RODANDO HOP EM MODO DIRETO ===" && \
             /opt/hop/hop-run.sh \
-            -j /dados_projeto/repo/estudos-hop \
             -f /dados_projeto/repo/estudos-hop/dummy.hpl \
             -l Basic
             """
