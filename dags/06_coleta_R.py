@@ -70,7 +70,7 @@ with DAG(
 
         # Comando: Rscript -e "print(...)"
         cmds=["Rscript", f"/repo/{PASTA_PROJETO}/{NOME_SCRIPT}"],
-        is_delete_operator_pod=True, # Deleta o pod ao final para não sujar o cluster
+        is_delete_operator_pod=False, # Deleta o pod ao final para não sujar o cluster
         get_logs=True, # Tenta pegar o log para mostrar na UI
         image_pull_policy="Always" # Garante que baixa a imagem se não tiver
     )
