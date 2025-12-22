@@ -82,9 +82,9 @@ arquivo_deputados <- "/dados/tabela_deputados.csv"
   
 arquivo_gastos <- "/dados/tabela_gastos.csv"
 
-write_csv(tabela_deputados,arquivo_deputados)
+write_csv2(tabela_deputados,arquivo_deputados)
 
-write_csv(tabela_gastos,arquivo_gastos)
+write_csv2(tabela_gastos,arquivo_gastos)
 
 
 
