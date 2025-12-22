@@ -66,7 +66,7 @@ with DAG(
         init_containers=[container_git],
 
         volumes=[vol_codigo,vol_dados],
-        volumes_mounts=[mount_codigo,mount_dados],
+        volume_mounts=[mount_codigo,mount_dados],
 
         # Comando: Rscript -e "print(...)"
         cmds=["Rscript", f"/repo/{PASTA_PROJETO}/{NOME_SCRIPT}"],
