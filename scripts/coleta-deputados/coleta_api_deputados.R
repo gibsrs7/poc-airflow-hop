@@ -1,5 +1,5 @@
 library(httr2)
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 
 parse_data <- function(req){
   
@@ -36,7 +36,7 @@ query_deputados <- list(id="204379")
 
 tabela_deputados <- 
   url_base |> 
-  request_create(path) |> 
+  request_create(path_deputados) |> 
   parse_data()
 
 
