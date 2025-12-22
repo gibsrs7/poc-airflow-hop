@@ -5,15 +5,22 @@ USER root
 # 1. Instala utilitários
 RUN apk add --no-cache bash curl
 
-# 2. LIMPEZA: Remove qualquer jar antigo da Oracle que possa ter vindo na imagem ou cache
+# 2. LIMPEZA TOTAL: Remove qualquer vestígio de driver antigo
 RUN rm -f /opt/hop/lib/ojdbc*.jar
+RUN rm -f /opt/hop/plugins/databases/oracle/lib/ojdbc*.jar
 
-# 3. COPIA: Copia APENAS o ojdbc11.jar
-# (Certifique-se que APENAS esse arquivo está na pasta do seu PC, ou edite o nome aqui)
-COPY ojdbc11.jar /opt/hop/lib/
+# 3. ESTRATÉGIA A: Pasta Isolada (Para a variável de ambiente)
+RUN mkdir -p /lib-ext
+COPY ojdbc11.jar /lib-ext/
 
-# 4. PERMISSÕES: Garante que todo mundo pode ler (chmod) e que pertence ao grupo root
-RUN chmod 777 /opt/hop/lib/ojdbc11.jar
+# 4. ESTRATÉGIA B: Pasta do Plugin (Método Nativo do Hop)
+# O Hop costuma olhar automaticamente dentro de plugins/databases/.../lib
+RUN mkdir -p /opt/hop/plugins/databases/oracle/lib
+COPY ojdbc11.jar /opt/hop/plugins/databases/oracle/lib/
+
+# 5. PERMISSÕES: Liberar tudo para evitar erro de leitura
+RUN chmod -R 777 /lib-ext
+RUN chmod -R 777 /opt/hop/plugins/databases/oracle/lib
 
 WORKDIR /files
 

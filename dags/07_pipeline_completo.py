@@ -123,7 +123,11 @@ with DAG(
             /opt/hop/hop-run.sh \
                 -j "projeto-etl" \
                 -f "/repo/{PASTA_PROJETO}/{PIPELINE_HOP}" \
-                -l Basic
+                -l Basic \
+                -p DIR_DADOS=/dados \
+                -p DB_HOST=$DB_HOST \
+                -p DB_USER=$DB_USER \
+                -p DB_PASS=$DB_PASS
             """
         ],
         
