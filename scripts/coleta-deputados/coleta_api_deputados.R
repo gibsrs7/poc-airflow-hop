@@ -78,12 +78,10 @@ for(id_atual in id_deputados){
 
 tabela_gastos <- bind_rows(lista_tabelas_gastos)
 
-arquivo_deputados <- "tabela_deputados.csv"
+arquivo_deputados <- "/dados/tabela_deputados.csv"
   
-arquivo_gastos <- "tabela_gastos.csv"
+arquivo_gastos <- "/dados/tabela_gastos.csv"
 
-
-print("Salvando arquivo {}",)
 write_csv(tabela_deputados,arquivo_deputados)
 
 write_csv(tabela_gastos,arquivo_gastos)
