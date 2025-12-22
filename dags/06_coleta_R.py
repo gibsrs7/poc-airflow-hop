@@ -55,7 +55,7 @@ with DAG(
     tags=['poc', 'etl','R']
 ) as dag:
 
-task_coleta_r= KubernetesPodOperator(
+    task_coleta_r= KubernetesPodOperator(
         task_id="coleta_deputados",
         name="pod-coleta-deputados",
         namespace="airflow", 
@@ -73,6 +73,6 @@ task_coleta_r= KubernetesPodOperator(
         is_delete_operator_pod=True, # Deleta o pod ao final para não sujar o cluster
         get_logs=True, # Tenta pegar o log para mostrar na UI
         image_pull_policy="Always" # Garante que baixa a imagem se não tiver
-)
+    )
 
 
