@@ -65,7 +65,7 @@ with DAG(
 
         init_containers=[container_git],
 
-        volumes=[vol_codigo,vol_dados]
+        volumes=[vol_codigo,vol_dados],
         volumes_mounts=[mount_codigo,mount_dados],
 
         # Comando: Rscript -e "print(...)"
