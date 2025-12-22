@@ -21,6 +21,8 @@ secret_db_pass = Secret('env', 'DB_PASS', 'oracle-secrets', 'password')
 # 2. Vai criar a variável de ambiente DB_USER pegando do secret 'oracle-secrets' chave 'username'
 secret_db_user = Secret('env', 'DB_USER', 'oracle-secrets', 'username')
 
+secret_db_user = Secret('env', 'DB_HOST', 'oracle-secrets', 'host')
+
 # --------------------------------
 
 # 1. Volume Temporário para o CÓDIGO (Git baixa aqui, R lê daqui)
@@ -125,7 +127,7 @@ with DAG(
                 -f "/repo/{PASTA_PROJETO}/{PIPELINE_HOP}" \
                 -l Basic \
                 -p DIR_DADOS=/dados \
-                -p DB_HOST=172.25.227.73 \
+                -p DB_HOST=$DB_HOST \
                 -p DB_USER=$DB_USER \
                 -p DB_PASS=$DB_PASS
             """
