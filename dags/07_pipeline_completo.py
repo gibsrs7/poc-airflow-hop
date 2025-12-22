@@ -9,7 +9,7 @@ from datetime import datetime
 REPO_GIT = "https://github.com/gibsrs7/poc-airflow-hop.git"
 BRANCH = "main"
 PASTA_PROJETO = "hop/estudos-hop"
-PIPELINE_HOP = "hop/estudos-hop/airflow-hop.hpl"
+PIPELINE_HOP = "airflow-hop.hpl"
 SCRIPT_R = "scripts/coleta-deputados/coleta_api_deputados.R"
 
 # --- DEFINIÇÃO DOS SEGREDOS (A Mágica acontece aqui) ---
@@ -122,7 +122,7 @@ with DAG(
             echo "--- Executando Pipeline ---" && \
             /opt/hop/hop-run.sh \
                 -j "projeto-etl" \
-                -f "/repo/projeto/{PASTA_PROJETO}/{PIPELINE_HOP}" \
+                -f "/repo/{PASTA_PROJETO}/{PIPELINE_HOP}" \
                 -l Basic
             """
         ],
